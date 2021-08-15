@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fresh start</title>
+  <style>
+      header {
+      position: fixed;
+      background: #22242A;
+      padding: 20px;
+      width: 100%;
+
+      z-index: 1;
+    }
+    .logout_btn {
+      padding: 5px;
+      background: #19B3D3;
+      text-decoration: none;
+      float: right;
+      margin-top: -30px;
+      margin-right: 40px;
+      border-radius: 2px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.5s;
+      transition-property: background;
+    }
+
+    .logout_btn:hover {
+      background: #0B87A6;
+    }
+    footer {
+      padding: 0px 0px 0px 0px;
+      background-color: black;
+      margin: 0px;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 23px;
+      width: 60px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa:hover {
+      opacity: 0.5;
+      text-decoration: none;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .fa-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+    }
+
+    p {
+      text-align: center;
+
+    }
+    .block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #04AA6D;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+  </style>
+
+</head>
+
+<body>
+<header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3>Fresh Start</h3>
+    </div>
+    <div class="right_area">
+      <a href="/logout" class="logout_btn">Logout</a>
+    </div>
+  </header>
+  <script src='https://meet.jit.si/external_api.js'></script>
+  <br><br><br><br><br><br><br><br>
+  <center><button class="block" id="start" type="button">Start the Meeting</button></center>
+  <div id="jitsi-container">
+  </div>
+  
+  <script>
+  var button = document.querySelector('#start');
+  var container = document.querySelector('#jitsi-container');
+  var api = null;
+  
+  button.addEventListener('click', () => {
+      var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var stringLength = 30;
+  
+      function pickRandom() {
+      return possible[Math.floor(Math.random() * possible.length)];
+      }
+  
+  var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
+  
+      var domain = "meet.jit.si";
+      var options = {
+          "roomName": randomString,
+          "parentNode": container,
+          "width": 600,
+          "height": 600,
+      };
+      api = new JitsiMeetExternalAPI(domain, options);
+  });
+  </script>
+  <footer>
+    <br>
+    <div>
+      <h5><a style="color:white" style="text-decoration:none" href="/aboutus">About Us</a></h5>
+      <h5><a style="color:white" style="text-decoration:none" href="/contactus">Contact Us</a></h5>
+    </div>
+  
+  
+    <p>
+      <a href="https://facebook.com/" class="fa fa-facebook"></a>
+     
+      <a href="https://instagram.com/" class="fa fa-instagram"></a>
+      <a href="https://twitter.com/" class="fa fa-twitter"></a>
+    </p>
+  
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
+            <p>
+              Copyright &copy; 2020 :All rights reserved </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+  </body>
+  </html>

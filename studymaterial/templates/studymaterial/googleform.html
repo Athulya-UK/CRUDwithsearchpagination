@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Google form{% endblock title %}
+{% block content %}
+{% include "studymaterial/browsing_header.html" %}
+<br><br><br><br><br>
+<div class="container">
+    <div class="col-md-12">
+        <h1 style="text-align: center">Join Us for the Skill Test</h1>
+        <p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdpGReEiw_TaykVqkK7PBJuHAt20YtI9FQDMUxgU5Yok1GTHg/viewform?embedded=true" width="1200" height="420" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </p>
+    </div>
+</div>
+<br><br><br>
+    {% include "studymaterial/browsing_footer.html" %}
+{% endblock content %}
+  

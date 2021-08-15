@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+<style>
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+</style>
+  {% include "management/navbar.html" %}
+  {%block body%}
+
+  {%endblock body%}
+  {% include "management/footer.html" %}
+
+{% endblock content %}

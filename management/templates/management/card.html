@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+
+  <style>
+   
+  </style>
+  <h1><center>Start Learning anything from anywhere</center></h1>
+  <br>
+  <div class="container-fluid">
+  <div class="row mx-auto">
+    {% for i in data %}
+<div class="card mx-auto m-2" id="section1" style="width: 21rem;">
+  
+    <img src="{{i.subject_image.url}}" class="card-img-top" width="400" height="200" alt="...">
+  
+  <div class="card-body">
+    <h4 class="card-title">{{i.subject_name}}</h4>
+    <h4 class="card-title">{{i.level}}</h4>
+    <!-- <h6>We divide your learning in 3 steps.Beginner,intermediate and advanced.Choose your field with our qualification test.</h6> -->
+    <a href="{{i.testlink}}" ><b>Test your Knowledge</b></a>
+    <br><br>
+  
+
+    
+    <a href='{% url "management:detail" i.subect_id %}'><button  class="btn btn-warning">{{i.subject_name}} {{i.level}} Syllabus</button></a>
+    <br>
+    
+    
+
+    <h3 class="card-text"><b>₹ {{i.price}}</b></h3>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+    <a class="btn btn-primary btn-md" href="/studentsignup" role="button">Apply know</a>
+  </div>
+</div>
+{% endfor %}
+{% include 'management/pagination.html' with page=data %}
+</div>
+</div>
+
+
+
+
+
+  {% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+
+  <style>
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color:#0773f8;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 40px;
+      margin-bottom: 90px;
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+
+
+
+    .glow {
+      font-size: 70px;
+      color: #ffffff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+  </style>
+  {% include "management/navbar.html" %}
+  <br>
+  <br>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    <br><br><br>
+    <center><h1 style="color:white" class="display-4 glow">Start Learning Without Limits</h1></center>
+    <br><br>
+    <hr style="color:white;height: 5px;">
+    <br>
+    <center><h2 style="color:white">Knowledge is key to success.<h2></center>
+    <center><h4 style="color:white">A Great online leaning platform to master the valuable skills and to become zero to hero in no time.</h4></center>
+    <br><br><br>
+    
+    <p class="lead">
+      <a class="btn btn-dark btn-lg" href="/studentsignup" role="button">Start Learning</a>
+    </p>
+    <br><br>
+  </div>
+
+  
+  <br>
+  {% include "management/card.html" %}
+  <br>
+  {% include "management/design.html" %}
+  {% include "management/footer.html" %}
+  {% endblock content %}

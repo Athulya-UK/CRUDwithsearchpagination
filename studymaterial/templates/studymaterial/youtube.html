@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Youtube{% endblock title %}
+{% block content %}
+<!-- <h2>Search Vedios in Youtube</h2> -->
+{% include "studymaterial/browsing_header.html" %}
+<br><br><br><br><br>
+<section class="jumbotron text-center" >
+    <div class="container">
+      <h1 class="jumbotron-heading">Search Vedios in Youtube</h1>
+    <p class="text-center"><b>Select any vedio to open in youtube</b></p>
+    <form class="text-center" action="" method="post">
+        {% csrf_token %}
+        {{form}}
+    <input class="btn btn-danger" type="submit" value="Submit">
+    </form><br>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for result in results %}
+        <div class="col-md-4">
+        <a style="text-decoration:none" href="{{result.link}}" target="_blank">
+        
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ result.thumbnail }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+            <div class="card-body">
+              <p style="color:black;" class="card-text">{{ result.title }}</p>
+              <h5 style="color:black;" class="p-0 m-0">Channel: {{result.channel}}</h5>
+              <div class="d-flex justify-content-between align-items-center">
+            </a>
+            <b>
+                <small class="text-muted">{{ result.duration }} mins</small>
+                &nbsp;
+                <small class="text-muted">{{result.views}}</small>
+                &nbsp;
+                <small class="text-muted">{{result.published}}</small>
+            </b>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+    {% include "studymaterial/browsing_footer.html" %}
+{% endblock content %}
+
+

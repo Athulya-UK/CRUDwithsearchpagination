@@ -1,0 +1,24 @@
+{% extends 'management/homebase.html' %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+
+<br>
+<br>
+{% include "management/navbar.html" %}
+<div class="container">
+  <br><br><br><br><br>
+<center>
+<div class="jumbotron" style="margin-bottom:0px;">
+  <h1 class="display-4">Hello, Student</h1>
+  <p class="lead">Welcome to Online Learning Platform.</p>
+  <hr class="my-4">
+  <p>You can access various features after Login.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="studentsignup" role="button">New Admission</a>
+    <a class="btn btn-primary btn-lg" href="studentlogin" role="button">Login</a>
+  </p>
+</div>
+</center>
+</div>
+{% include "management/footer.html" %}
+{% endblock content %}

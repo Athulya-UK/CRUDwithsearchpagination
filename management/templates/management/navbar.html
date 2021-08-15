@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+
+  <style>
+    .bs-example {
+      margin: 0px;
+
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-family: sans-serif;
+
+    }
+    #right
+{
+    position:absolute;
+    left:230px;
+}
+
+
+  </style>
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md bg-warning navbar-light fixed-top">
+      <a href="/" class="navbar-brand">Fresh Start</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link active">Home</a>
+        </div>
+        
+        <div id="right">
+        <form>
+          <div class="input-group">
+            <input name="s" type="text" placeholder="   Search course to learn   " class="form-control" />
+            &nbsp;&nbsp;
+            <div class="input-group-append">
+              <button class="btn btn-outline-dark btn-lg">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+        <div class="navbar-nav">
+          <a href="/adminclick" class="nav-item nav-link">Admin</a>
+          <a href="/teacherclick" class="nav-item nav-link">Teacher</a>
+          <a href="/studentclick" class="nav-item nav-link">Student</a>
+          </div>
+       
+
+      
+
+
+
+      </div>
+    </nav>
+  </div>
+  {% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Fresh Start{% endblock title %}
+{% block content %}
+<style>
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color:#0773f8;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+    .mydivstyle1{
+    padding: 50px;
+    border: 5px outset black;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: white
+} 
+.mydivstyle2{
+    border: 5px outset black;
+    margin-top: 40px;
+    margin-bottom: 90px;
+    margin-right: 200px;
+    margin-left: 50px;
+    
+}
+</style>
+<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+<h1 style="color:white"><center>Start your Success Journey</center></h1>
+<h4 style="color:white"><center>Master in the latest Skills with courses in python, django, java and more</center></h4>
+<div class="row">
+    <div class="col-6">
+        <div class="mydivstyle1">
+            <h4>Take the next step toward your professional goals with our platform.</h4>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="mydivstyle2">
+            <center><img src="{% static 'images/img1.jpeg'  %}" width="385" height="300" alt="My image"></center>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
